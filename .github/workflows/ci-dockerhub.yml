@@ -34,14 +34,14 @@ jobs:
 
       - name: Build image
         env:
-          IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/go1fl-sprint12-final-tpl-ashkenov-timur
+          IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/capibara_mainfinal
           VERSION: ${{ github.ref_name }}
         run: |
           docker build -t "$IMAGE:$VERSION" -t "$IMAGE:latest" .
 
       - name: Push image
         env:
-          IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/go1fl-sprint12-final-tpl-ashkenov-timur
+          IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/capibara_mainfinal
           VERSION: ${{ github.ref_name }}
         run: |
           docker push "$IMAGE:$VERSION"
